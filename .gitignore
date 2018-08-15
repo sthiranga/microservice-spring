@@ -1,0 +1,40 @@
+/.metadata/
+
+.git/*
+*.project
+*.settings
+*.pmd
+*target
+*.classpath
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.ids
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+RemoteSystemsTempFiles/
+Servers/
+.recommenders
+
+
