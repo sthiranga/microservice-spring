@@ -1,10 +1,14 @@
 package com.sasika.auth.service;
 
+import java.util.List;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.sasika.auth.entity.User;
 
-import reactor.core.publisher.Mono;
+public interface UserService extends UserDetailsService {
 
-public interface UserService {
-
-	Mono<User> saveUser(User user);
+    User save(User user);
+    List<User> findAll();
+    void delete(long id);
 }
