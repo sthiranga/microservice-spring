@@ -37,4 +37,20 @@ RemoteSystemsTempFiles/
 Servers/
 .recommenders
 
+##### React ######
+.vscode/*
+yarn.lock
+node_modules
+newrelic_agent.log
+.idea
+build
+dist
+build/bundle.js
+server.bundle.js
+npm-debug.log
+app/tests/mocks/server.bundle.test.js
+.tmp/*
+coverage/
+.nyc_output/
+.scannerwork/
 
