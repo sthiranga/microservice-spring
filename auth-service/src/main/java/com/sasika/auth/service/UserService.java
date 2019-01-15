@@ -8,6 +8,7 @@ import com.sasika.auth.entity.User;
 
 public interface UserService extends UserDetailsService {
 
+	User findByEmail(String email);
     User save(User user);
     List<User> findAll();
     void delete(long id);

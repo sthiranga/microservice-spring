@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.sasika.auth.entity.User;
 import com.sasika.auth.service.UserService;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -15,7 +16,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="/user", method = RequestMethod.GET)
+    @RequestMapping("/user")
+    public User user(Principal principal) {
+        return userService.findByEmail(principal.getName());
+    }
+    @RequestMapping(value="/users", method = RequestMethod.GET)
     public List<User> listUser(){
         return userService.findAll();
     }
@@ -29,5 +34,5 @@ public class UserController {
     public String delete(@PathVariable(value = "id") Long id){
         userService.delete(id);
         return "success";
-}
+    }
 }
