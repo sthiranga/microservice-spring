@@ -1,16 +1,49 @@
 package com.sasika.auth.entity;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public enum Role {
+@Entity
+public class Role {
 
-	STUDENT("Student");
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    @Enumerated(EnumType.STRING)
+    private RoleEnum name;
 
-	private final String name;
+    public Role() {
+    }
 
-	Role(String name) {
+    public Role(RoleEnum name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public RoleEnum getName() {
+		return name;
+	}
+
+	public void setName(RoleEnum name) {
 		this.name = name;
 	}
 
-	public String getName() {
-		return name;
-	}
+	@Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
